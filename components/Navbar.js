@@ -10,6 +10,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/system";
 import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Menu, MenuItem } from "@mui/material";
 
 const StyledAppBar = styled(AppBar)({
   margin: "2rem",
@@ -27,6 +29,15 @@ function ResponsiveAppBar() {
     setActiveButton(name);
     console.log(name);
   };
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <StyledAppBar position="relative">
       <Container maxWidth="xl">
@@ -113,7 +124,19 @@ function ResponsiveAppBar() {
             </Button>
           </Box>
 
-          <Box sx={{ display: "flex", gap: "1rem" }}>
+          <Box sx={{ display: "flex", gap: "0.5rem" }}>
+            <Button
+              id="demo-positioned-button"
+              aria-controls={open ? "demo-positioned-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleMenuClick}
+              variant="text"
+              sx={{ borderRadius: "1rem" }}
+              className="md:hidden"
+            >
+              <MenuIcon />
+            </Button>
             <Button variant="outlined" sx={{ borderRadius: "1rem" }}>
               <ShoppingBasketOutlinedIcon />
             </Button>
@@ -121,6 +144,29 @@ function ResponsiveAppBar() {
               <Person2OutlinedIcon />
               ثبت نام / ورود
             </Button>
+            <div>
+              <Menu
+                id="demo-positioned-menu"
+                aria-labelledby="demo-positioned-button"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                sx={{ top: "10px" }}
+              >
+                <MenuItem onClick={handleClose}>رزرو مشاوره</MenuItem>
+                <MenuItem onClick={handleClose}>خدمات ما </MenuItem>
+                <MenuItem onClick={handleClose}>موفقیت‌ها </MenuItem>
+                <MenuItem onClick={handleClose}>بلاگ </MenuItem>
+              </Menu>
+            </div>
           </Box>
         </Toolbar>
       </Container>
