@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Yekan;
-    src: url("../src/FONTS/BYekan.ttf");
+  font-family: Vazirmatn;
+    src: url("../assets/Vazir/Vazirmatn-Light.ttf");
+    src: url("../assets/Vazir/Vazirmatn-Black.ttf");
   
 }
 
@@ -20,4 +21,8 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+body {
+  font-family: 'Vazirmatn';
 }

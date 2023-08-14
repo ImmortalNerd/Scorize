@@ -66,7 +66,7 @@ export default function LabTabs() {
                 noValidate
                 autoComplete="off"
               >
-                <div className="flex-col md:flex-row">
+                <div className="flex-col md:flex-row md:gap-4">
                   <TextField
                     variant="standard"
                     sx={{ maxWidth: "max-content" }}
@@ -107,7 +107,10 @@ export default function LabTabs() {
                 </div>
               </Box>
               <div>
-                <Button variant="contained" sx={{ borderRadius: "0.5rem" }}>
+                <Button
+                  variant="contained"
+                  sx={{ borderRadius: "0.5rem", padding: "1rem" }}
+                >
                   <SearchIcon />
                 </Button>
               </div>

@@ -14,6 +14,11 @@ export default function MyDocument(props) {
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300&display=swap"
+          rel="stylesheet"
+        />
+
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
       </Head>

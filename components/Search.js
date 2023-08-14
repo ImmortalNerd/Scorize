@@ -8,7 +8,7 @@ export default function Search() {
   return (
     <>
       <div className="flex justify-center lg:justify-between min-w-min">
-        <div className="flex flex-col my-16 p-16 gap-8 basis-2/3">
+        <div className="flex flex-col my-16 p-16 basis-2/3">
           <div>
             <Button
               className="gap-3"
@@ -27,11 +27,11 @@ export default function Search() {
               مهاجرت تضمینی
             </Button>
           </div>
-          <h2>
+          <h1>
             مهاجرت تضمینی به خارج از کشور
             <br />
             با اسکورایز
-          </h2>
+          </h1>
           <div>
             <SearchForm />
           </div>
